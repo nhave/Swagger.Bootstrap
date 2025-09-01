@@ -1,0 +1,150 @@
+﻿/* ================================================================================
+    ███████╗██╗    ██╗ █████╗  ██████╗  ██████╗ ███████╗██████╗                 
+    ██╔════╝██║    ██║██╔══██╗██╔════╝ ██╔════╝ ██╔════╝██╔══██╗                
+    ███████╗██║ █╗ ██║███████║██║  ███╗██║  ███╗█████╗  ██████╔╝                
+    ╚════██║██║███╗██║██╔══██║██║   ██║██║   ██║██╔══╝  ██╔══██╗                
+    ███████║╚███╔███╔╝██║  ██║╚██████╔╝╚██████╔╝███████╗██║  ██║██╗             
+    ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝             
+                                                                            
+    ██████╗  ██████╗  ██████╗ ████████╗███████╗████████╗██████╗  █████╗ ██████╗ 
+    ██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗
+    ██████╔╝██║   ██║██║   ██║   ██║   ███████╗   ██║   ██████╔╝███████║██████╔╝
+    ██╔══██╗██║   ██║██║   ██║   ██║   ╚════██║   ██║   ██╔══██╗██╔══██║██╔═══╝ 
+    ██████╔╝╚██████╔╝╚██████╔╝   ██║   ███████║   ██║   ██║  ██║██║  ██║██║     
+    ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      
+======= Swagger.Bootstrap V1.0 by N-Tech ======================================= */
+
+window.theme = {
+    changeTheme: function (theme) {
+        localStorage.setItem("colorTheme", theme.toLowerCase());
+        window.theme.updateTheme();
+        window.theme.currentTheme = theme.toLowerCase();
+    },
+    updateTheme: function () {
+        const themeSelectIcon = document.getElementById("themeSelectIcon");
+        const hasIcon = themeSelectIcon != null;
+        if (hasIcon) {
+            themeSelectIcon.classList.remove("bi-circle-half", "bi-sun-fill", "bi-moon-stars-fill", "bi-lightbulb-off-fill");
+        }
+
+        const themeSelectLight = document.getElementById("themeSelectLight");
+        const themeSelectDark = document.getElementById("themeSelectDark");
+        const themeSelectAuto = document.getElementById("themeSelectSystem");
+        const themeSelectOled = document.getElementById("themeSelectOled");
+
+        if (hasIcon) {
+            themeSelectLight.classList.remove("active");
+            themeSelectDark.classList.remove("active");
+            themeSelectAuto.classList.remove("active");
+            themeSelectOled.classList.remove("active");
+        }
+
+        const theme = localStorage.getItem("colorTheme");
+
+        if (theme == "light") {
+            document.querySelector("html").setAttribute("data-bs-theme", "light")
+            if (hasIcon) {
+                themeSelectIcon.classList.add("bi-sun-fill");
+                themeSelectLight.classList.add("active");
+            }
+            window.theme.currentTheme = "light";
+        }
+        else if (theme == "dark") {
+            document.querySelector("html").setAttribute("data-bs-theme", "dark")
+            if (hasIcon) {
+                themeSelectIcon.classList.add("bi-moon-stars-fill");
+                themeSelectDark.classList.add("active");
+            }
+            window.theme.currentTheme = "dark";
+        }
+        else if (theme == "oled") {
+            document.querySelector("html").setAttribute("data-bs-theme", "oled")
+            if (hasIcon) {
+                themeSelectIcon.classList.add("bi-lightbulb-off-fill");
+                themeSelectOled.classList.add("active");
+            }
+            window.theme.currentTheme = "oled";
+        }
+        else {
+            document.querySelector("html").setAttribute("data-bs-theme",
+                window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+            if (hasIcon) {
+                themeSelectIcon.classList.add("bi-circle-half");
+                themeSelectAuto.classList.add("active");
+            }
+            window.theme.currentTheme = "system";
+        }
+    },
+    currentTheme: "system"
+}
+
+window.theme.updateTheme();
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', window.theme.updateTheme);
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const topbar = document.querySelector('.topbar-wrapper');
+        if (!topbar) return;
+
+        const dropdown = document.createElement("div");
+        dropdown.classList.add("bs-btn-group", "dropdown", "nav-item");
+        topbar.appendChild(dropdown);
+
+        const dropToggleBtn = document.createElement("button");
+        dropToggleBtn.classList.add("nav-link", "dropdown-toggle");
+        dropToggleBtn.type = "button";
+
+        dropToggleBtn.addEventListener("click", () => {
+            dropdownMenu.classList.add("show");
+        });
+        dropdown.appendChild(dropToggleBtn);
+
+        const icon = document.createElement("i");
+        icon.id = "themeSelectIcon";
+        icon.classList.add("bi");
+        dropToggleBtn.appendChild(icon);
+
+        const dropdownMenu = document.createElement("ul");
+        dropdownMenu.classList.add("dropdown-menu", "dropdown-menu-end");
+        dropdown.appendChild(dropdownMenu);
+
+        const themes = [["Light", "bi-sun-fill"], ["Oled", "bi-lightbulb-off-fill"], ["Dark", "bi-moon-stars-fill"], ["System", "bi-circle-half"]];
+        for (i in themes) {
+            const theme = themes[i][0];
+            const bi = themes[i][1];
+
+            if (window.theme.currentTheme == theme.toLowerCase()) icon.classList.add(bi);
+
+            const li = document.createElement("li");
+            dropdownMenu.appendChild(li);
+
+            const themeBtn = document.createElement("button");
+            themeBtn.classList.add("dropdown-item", "d-flex", "align-items-center");
+            if (window.theme.currentTheme == theme.toLowerCase()) {
+                themeBtn.classList.add("active");
+            }
+            themeBtn.id = `themeSelect${theme}`;
+            themeBtn.onclick = () => {
+                window.theme.changeTheme(theme)
+            };
+            li.appendChild(themeBtn);
+
+            const themeIcon = document.createElement("i");
+            themeIcon.classList.add("bi", bi, "me-2");
+            themeBtn.appendChild(themeIcon);
+            themeBtn.append(`${theme}`);
+
+            const themeCheck = document.createElement("i");
+            themeCheck.classList.add("bi", "bi-check", "ms-auto", "dropdown-check");
+            themeBtn.appendChild(themeCheck);
+
+            document.body.addEventListener("click", (e) => {
+                const btn = e.target.closest(".dropdown-toggle");
+                if (!btn) {
+                    dropdownMenu.classList.remove("show");
+                }
+            });
+        }
+    }, 50);
+});
