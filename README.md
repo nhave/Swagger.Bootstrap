@@ -1,3 +1,24 @@
+<!-- Badges -->
+<p align="center">
+  <!-- Version -->
+  <a href="https://github.com/nhave/Swagger.Bootstrap/releases">
+    <img src="https://img.shields.io/github/v/release/nhave/Swagger.Bootstrap?style=for-the-badge" alt="Latest Release">
+  </a>
+  <!-- License -->
+  <a href="https://github.com/nhave/Swagger.Bootstrap/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/nhave/Swagger.Bootstrap?style=for-the-badge" alt="License">
+  </a>
+  <!-- Issues -->
+  <a href="https://github.com/nhave/Swagger.Bootstrap/issues">
+    <img src="https://img.shields.io/github/issues/nhave/Swagger.Bootstrap?style=for-the-badge" alt="Open Issues">
+  </a>
+  <!-- Stars -->
+  <a href="https://github.com/nhave/Swagger.Bootstrap/stargazers">
+    <img src="https://img.shields.io/github/stars/nhave/Swagger.Bootstrap?style=for-the-badge" alt="Stars">
+  </a>
+</p>
+
+
 # Swagger.Bootstrap
 
 **Swagger.Bootstrap** is an add-on for [Swagger UI](https://swagger.io/tools/swagger-ui/) that gives it a modern [Bootstrap](https://getbootstrap.com/) look and feel.  
