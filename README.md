@@ -1,7 +1,7 @@
 <div align="center">
 
 [![Latest Release](https://img.shields.io/github/v/release/nhave/Swagger.Bootstrap?style=for-the-badge)](https://github.com/nhave/Swagger.Bootstrap/releases)
-[![License](https://img.shields.io/github/license/nhave/Swagger.Bootstrap?style=for-the-badge)](https://github.com/nhave/Swagger.Bootstrap/blob/main/LICENSE)
+[![License: NonCommercial](https://img.shields.io/badge/License-NonCommercial-orange?style=for-the-badge)](https://github.com/nhave/Swagger.Bootstrap/blob/main/LICENSE)
 [![Open Issues](https://img.shields.io/github/issues/nhave/Swagger.Bootstrap?style=for-the-badge)](https://github.com/nhave/Swagger.Bootstrap/issues)
 [![Stars](https://img.shields.io/github/stars/nhave/Swagger.Bootstrap?style=for-the-badge)](https://github.com/nhave/Swagger.Bootstrap/stargazers)
 
