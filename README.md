@@ -1,22 +1,11 @@
-<!-- Badges -->
-<p align="center">
-  <!-- Version -->
-  <a href="https://github.com/nhave/Swagger.Bootstrap/releases" style="text-decoration: none;">
-    <img src="https://img.shields.io/github/v/release/nhave/Swagger.Bootstrap?style=for-the-badge" alt="Latest Release">
-  </a>
-  <!-- License -->
-  <a href="https://github.com/nhave/Swagger.Bootstrap/blob/main/LICENSE" style="text-decoration: none;">
-    <img src="https://img.shields.io/github/license/nhave/Swagger.Bootstrap?style=for-the-badge" alt="License">
-  </a>
-  <!-- Issues -->
-  <a href="https://github.com/nhave/Swagger.Bootstrap/issues" style="text-decoration: none;">
-    <img src="https://img.shields.io/github/issues/nhave/Swagger.Bootstrap?style=for-the-badge" alt="Open Issues">
-  </a>
-  <!-- Stars -->
-  <a href="https://github.com/nhave/Swagger.Bootstrap/stargazers" style="text-decoration: none;">
-    <img src="https://img.shields.io/github/stars/nhave/Swagger.Bootstrap?style=for-the-badge" alt="Stars">
-  </a>
-</p>
+<div align="center">
+
+[![Latest Release](https://img.shields.io/github/v/release/nhave/Swagger.Bootstrap?style=for-the-badge)](https://github.com/nhave/Swagger.Bootstrap/releases)
+[![License](https://img.shields.io/github/license/nhave/Swagger.Bootstrap?style=for-the-badge)](https://github.com/nhave/Swagger.Bootstrap/blob/main/LICENSE)
+[![Open Issues](https://img.shields.io/github/issues/nhave/Swagger.Bootstrap?style=for-the-badge)](https://github.com/nhave/Swagger.Bootstrap/issues)
+[![Stars](https://img.shields.io/github/stars/nhave/Swagger.Bootstrap?style=for-the-badge)](https://github.com/nhave/Swagger.Bootstrap/stargazers)
+
+</div>
 
 # Swagger.Bootstrap
 
