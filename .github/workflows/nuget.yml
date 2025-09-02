@@ -1,0 +1,25 @@
+name: Publish NuGet Package
+
+on:
+  release:
+    types: [published]  # Kører når du opretter en GitHub Release
+  workflow_dispatch:     # Tillader manuel kørsel fra GitHub UI
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout kode
+      uses: actions/checkout@v3
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Pak NuGet
+      run: dotnet pack .net/Swagger.Bootstrap.csproj -c Release -o out
+
+    - name: Push til nuget.org
+      run: dotnet nuget push out/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
