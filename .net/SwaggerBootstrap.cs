@@ -9,7 +9,7 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IApplicationBuilder UseSwaggerBootstrap(
             this IApplicationBuilder app,
-            Action<SwaggerUIOptions> setupAction = null)
+            Action<SwaggerUIOptions> setupAction = null!)
         {
             SwaggerUIOptions options;
             using (var scope = app.ApplicationServices.CreateScope())
