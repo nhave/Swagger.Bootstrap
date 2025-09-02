@@ -35,5 +35,7 @@
 		<RepositoryUrl>https://github.com/nhave/swagger.bootstrap</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
+	
+	<Nullable>enable</Nullable>
 
 </Project>
