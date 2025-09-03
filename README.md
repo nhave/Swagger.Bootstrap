@@ -10,25 +10,45 @@
 # Swagger.Bootstrap
 
 **Swagger.Bootstrap** is an add-on for [Swagger UI](https://swagger.io/tools/swagger-ui/) that gives it a modern [Bootstrap](https://getbootstrap.com/) look and feel.  
-It also adds a simple theme switcher so users can toggle between **light** and **dark mode**.
+It also adds a simple theme switcher so users can toggle between **Light**, **Dark**, **Oled** and **System**.
 
 ## ✨ Features
 - Bootstrap-inspired styling for Swagger UI
 - Built-in theme switcher (light/dark)
 - Easy integration with ASP.NET Core Swagger setup
-- No npm or package manager required
 
 ## 📂 Getting Started
 
-### 1. Download the files
-Copy the provided `swagger.bootstrap.min.css` and `swagger.bootstrap.min.js` files into your project, for example under:
-wwwroot
+## 1. NuGet package manager
+Install using the NuGet package manager or by running one of the following commands.
+```bash
+dotnet add package Swagger.Bootstrap
+```
+```bash
+Install-Package Swagger.Bootstrap
+```
 
+### Configure Swagger.Bootstrap
+In your `Program.cs` or `Startup.cs`, simply replace the default UseSwaggerUI with:
 
-### 2. Inject into Swagger UI in ASP.NET Core
+```csharp
+app.UseSwaggerBootstrap(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+});
+```
 
-In your `Program.cs` or `Startup.cs`, configure Swagger UI to include the CSS and JS:
+## 2. Manual installation
+### Download the files
+Copy the provided `swagger.bootstrap.min.css` and `swagger.bootstrap.min.js` files into your projects static file location, wwwroot.
 
+### Enable static files
+Add the following, to your `Program.cs` or `Startup.cs`
+```csharp
+app.UseStaticFiles();
+```
+
+### Inject into Swagger UI
 ```csharp
 app.UseSwaggerUI(c =>
 {
@@ -40,3 +60,4 @@ app.UseSwaggerUI(c =>
     // Inject custom JavaScript
     c.InjectJavascript("/swagger.bootstrap.min.js");
 });
+```
