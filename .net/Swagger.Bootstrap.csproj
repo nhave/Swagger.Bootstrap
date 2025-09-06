@@ -28,19 +28,27 @@
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<PackageId>Swagger.Bootstrap</PackageId>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<Authors>NHAVE</Authors>
 		<Company>N-Tech</Company>
 		<Description>Bootstrap styling for Swagger UI</Description>
-		<ProjectUrl>https://github.com/nhave/swagger.bootstrap</ProjectUrl>
+		<PackageProjectUrl>https://github.com/nhave/swagger.bootstrap</PackageProjectUrl>
+		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/nhave/swagger.bootstrap</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<Copyright>Copyright © 2025 Swagger Bootstrap</Copyright>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\README.md" Pack="true" PackagePath="" />
-		<None Include="..\LICENSE" Pack="true" PackagePath="" />
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 </Project>
