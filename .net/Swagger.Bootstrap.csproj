@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -21,7 +20,7 @@
   </ItemGroup>
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
 		<PackageId>Swagger.Bootstrap</PackageId>
 		<Version>1.0.5</Version>
 		<Authors>NHAVE</Authors>
@@ -43,6 +42,10 @@
 		<None Include="..\LICENSE">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\.github\workflows\**\*">
+			<Pack>False</Pack>
+			<Link>.github\workflows\%(RecursiveDir)%(Filename)%(Extension)</Link>
 		</None>
 	</ItemGroup>
 
