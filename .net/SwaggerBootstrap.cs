@@ -25,8 +25,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 options.ConfigObject.Urls = [new UrlDescriptor { Name = $"{hostingEnv.ApplicationName} v1", Url = "v1/swagger.json" }];
             }
 
-            options.InjectStylesheet("/_content/Swagger.Bootstrap/swagger.bootstrap.min.css");
-            options.InjectJavascript("/_content/Swagger.Bootstrap/swagger.bootstrap.min.js");
+            options.AddSwaggerBootstrap();
 
             app.UseStaticFiles();
 
