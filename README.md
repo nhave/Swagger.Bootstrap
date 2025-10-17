@@ -38,6 +38,19 @@ app.UseSwaggerBootstrap(c =>
 });
 ```
 
+Or if you want to keep your existing SwaggerUI configuration:  
+(app.UseStaticFiles must be set)
+
+```csharp
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+    c.AddSwaggerBootstrap();
+});
+
+app.UseStaticFiles();
+```
+
 ## 2. Manual installation
 ### Download the files
 Copy the provided `swagger.bootstrap.min.css` and `swagger.bootstrap.min.js` files into your projects static file location, wwwroot.

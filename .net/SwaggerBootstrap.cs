@@ -31,5 +31,11 @@ namespace Microsoft.Extensions.DependencyInjection
 
             return app.UseSwaggerUI(options);
         }
+
+        public static void AddSwaggerBootstrap(this SwaggerUIOptions swagger)
+        {
+            swagger.InjectStylesheet("/_content/Swagger.Bootstrap/swagger.bootstrap.min.css");
+            swagger.InjectJavascript("/_content/Swagger.Bootstrap/swagger.bootstrap.min.js");
+        }
     }
 }
