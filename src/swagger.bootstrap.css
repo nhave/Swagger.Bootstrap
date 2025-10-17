@@ -362,7 +362,7 @@ p {
     --bs-navbar-toggler-focus-width: 0.25rem;
     --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
 
-    background: var(--bs-body-bg) !important;
+    background: var(--bs-tertiary-bg) !important;
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
     box-shadow: var(--bs-box-shadow) !important;
 }
@@ -422,23 +422,6 @@ p {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
 }
 
-    .btn-primary, .btn.authorize, .btn.try-out__btn {
-        --bs-btn-color: #fff;
-        --bs-btn-bg: #0d6efd;
-        --bs-btn-border-color: #0d6efd;
-        --bs-btn-hover-color: #fff;
-        --bs-btn-hover-bg: #0b5ed7;
-        --bs-btn-hover-border-color: #0a58ca;
-        --bs-btn-focus-shadow-rgb: 49, 132, 253;
-        --bs-btn-active-color: #fff;
-        --bs-btn-active-bg: #0a58ca;
-        --bs-btn-active-border-color: #0a53be;
-        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-        --bs-btn-disabled-color: #fff;
-        --bs-btn-disabled-bg: #0d6efd;
-        --bs-btn-disabled-border-color: #0d6efd;
-    }
-
 .btn.authorize span {
     padding: 0 !important;
     margin-right: .25rem !important;
@@ -452,7 +435,7 @@ p {
     grid-gap: .5rem;
 }
 
-.btn-secondary, .modal-btn.auth.btn-done, .btn.btn-clear.opblock-control__btn {
+.btn-secondary, .btn.modal-btn.auth, .btn.btn-clear.opblock-control__btn {
     --bs-btn-color: #fff;
     --bs-btn-bg: #6c757d;
     --bs-btn-border-color: #6c757d;
@@ -467,6 +450,23 @@ p {
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #6c757d;
     --bs-btn-disabled-border-color: #6c757d;
+}
+
+.btn-primary, .btn.authorize, .btn.try-out__btn {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #0d6efd;
+    --bs-btn-border-color: #0d6efd;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0b5ed7;
+    --bs-btn-hover-border-color: #0a58ca;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #0a58ca;
+    --bs-btn-active-border-color: #0a53be;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
 }
 
 .btn-success, .btn.execute.opblock-control__btn {
