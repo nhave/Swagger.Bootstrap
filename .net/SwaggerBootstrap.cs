@@ -32,10 +32,28 @@ namespace Microsoft.Extensions.DependencyInjection
             return app.UseSwaggerUI(options);
         }
 
-        public static void AddSwaggerBootstrap(this SwaggerUIOptions swagger)
+        public static SwaggerBootstrapOptions AddSwaggerBootstrap(this SwaggerUIOptions swagger)
         {
-            swagger.InjectStylesheet("/_content/Swagger.Bootstrap/swagger.bootstrap.min.css");
-            swagger.InjectJavascript("/_content/Swagger.Bootstrap/swagger.bootstrap.min.js");
+            swagger.InjectStylesheet("/_content/Swagger.Bootstrap/swagger.bootstrap.css");
+            swagger.InjectJavascript("/_content/Swagger.Bootstrap/swagger.bootstrap.js");
+
+            return new SwaggerBootstrapOptions(swagger);
+        }
+
+    }
+
+    public class SwaggerBootstrapOptions
+    {
+        private SwaggerUIOptions swagger;
+        public SwaggerBootstrapOptions(SwaggerUIOptions swagger)
+        {
+            this.swagger = swagger;
+        }
+
+        public SwaggerBootstrapOptions AddExperimentalFeatures()
+        {
+            swagger.InjectJavascript("/_content/Swagger.Bootstrap/swagger.bootstrap.experimental.js");
+            return this;
         }
     }
 }

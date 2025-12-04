@@ -15,6 +15,7 @@ It also adds a simple theme switcher so users can toggle between **Light**, **Da
 ## ✨ Features
 - Bootstrap-inspired styling for Swagger UI
 - Built-in theme switcher (light/dark)
+- Navigation & Tool menus (Experimental)
 - Easy integration with ASP.NET Core Swagger setup
 
 ## 📂 Getting Started
@@ -27,6 +28,25 @@ dotnet add package Swagger.Bootstrap
 ```bash
 Install-Package Swagger.Bootstrap
 ```
+## New setup
+In your `UseSwaggerUI` just add `AddSwaggerBootstrap`:
+```csharp
+app.UseSwaggerUI(options =>
+{
+    options.AddSwaggerBootstrap();
+});
+```
+To enable the experimental features, add `AddExperimentalFeatures` to `AddSwaggerBootstrap`:
+```csharp
+options.AddSwaggerBootstrap()
+        .AddExperimentalFeatures();
+```
+This setup needs `UseStaticFiles` to be enabled:
+```csharp
+app.UseStaticFiles();
+```
+
+## Old setup
 
 ### Configure Swagger.Bootstrap
 In your `Program.cs` or `Startup.cs`, simply replace the default UseSwaggerUI with:

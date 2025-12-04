@@ -20,9 +20,9 @@
   </ItemGroup>
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+		<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
 		<PackageId>Swagger.Bootstrap</PackageId>
-		<Version>1.0.6</Version>
+		<Version>1.0.7</Version>
 		<Authors>NHAVE</Authors>
 		<Company>N-Tech</Company>
 		<Description>Bootstrap styling for Swagger UI</Description>
@@ -46,6 +46,10 @@
 		<None Include="..\.github\workflows\**\*">
 			<Pack>False</Pack>
 			<Link>.github\workflows\%(RecursiveDir)%(Filename)%(Extension)</Link>
+		</None>
+		<None Include="..\src\**\*">
+			<Pack>False</Pack>
+			<Link>src\%(RecursiveDir)%(Filename)%(Extension)</Link>
 		</None>
 	</ItemGroup>
 
