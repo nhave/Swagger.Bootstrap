@@ -1084,6 +1084,14 @@ p {
     z-index: 1000
 }
 
+.swagger-ui .opblock-tag {
+    padding: .5rem 1rem
+}
+
+    .navigation-card .card-header, .tools-card .card-header, .swagger-ui .opblock-tag span {
+        font-size: calc(1.275rem + 0.3vw) !important
+    }
+
 .tools-card-wrapper {
     display: flex;
     flex-direction: row-reverse
@@ -1114,7 +1122,7 @@ p {
         position: fixed
     }
 
-@media (max-width:1919.98px) {
+@media (max-width:1899.98px) {
     .navigation-card {
         left: -208px;
         transform: translateX(0) !important;
