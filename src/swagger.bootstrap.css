@@ -12,7 +12,7 @@
     ██╔══██╗██║   ██║██║   ██║   ██║   ╚════██║   ██║   ██╔══██╗██╔══██║██╔═══╝ 
     ██████╔╝╚██████╔╝╚██████╔╝   ██║   ███████║   ██║   ██║  ██║██║  ██║██║     
     ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      
-======= Swagger.Bootstrap V1.0 by N-Tech ======================================= */
+======= Swagger.Bootstrap V1.1 by N-Tech ======================================= */
 
 @charset "UTF-8";
 
@@ -624,8 +624,13 @@ p {
     fill: var(--bs-body-color) !important;
 }
 
-.swagger-ui .opblock .opblock-summary-path {
+.swagger-ui .opblock .opblock-summary-path,
+.swagger-ui .opblock .opblock-summary-path__deprecated {
     color: var(--bs-body-color) !important;
+}
+
+.swagger-ui .opblock.opblock-deprecated .opblock-summary-method {
+    color: var(--bs-secondary) !important;
 }
 
 .swagger-ui .opblock .opblock-summary-description {
