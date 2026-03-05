@@ -148,11 +148,13 @@
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
 
+
     document.addEventListener("DOMContentLoaded", async () => {
         const observer = new MutationObserver(() => {
             const container = document.querySelector(".topbar-wrapper");
             if (container) {
                 addThemeButton();
+                document.querySelector("html").classList.remove("dark-mode");
                 observer.disconnect();
             }
         });

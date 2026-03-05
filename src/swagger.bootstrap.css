@@ -135,6 +135,7 @@
     --bs-form-valid-border-color: #198754;
     --bs-form-invalid-color: #dc3545;
     --bs-form-invalid-border-color: #dc3545;
+    --bs-json-attribute-color: #55a;
 }
 
 [data-bs-theme=dark] {
@@ -191,6 +192,7 @@
     --bs-form-valid-border-color: #75b798;
     --bs-form-invalid-color: #ea868f;
     --bs-form-invalid-border-color: #ea868f;
+    --bs-json-attribute-color: #9898ff;
 }
 
 [data-bs-theme=oled] {
@@ -249,6 +251,7 @@
     --bs-form-valid-border-color: #75b798;
     --bs-form-invalid-color: #ea868f;
     --bs-form-invalid-border-color: #ea868f;
+    --bs-json-attribute-color: #9898ff;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -710,6 +713,7 @@ p {
 
 .form-select,
 .content-type,
+.swagger-ui select,
 .swagger-ui .parameters-col_description select,
 .swagger-ui .topbar .download-url-wrapper .select-label select {
     --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
@@ -1145,18 +1149,34 @@ p {
 }
 
 .swagger-ui .opblock-tag {
+    border: none;
     padding: .5rem 1rem;
 }
 
-    .navigation-card .card-header,
-    .tools-card .card-header,
-    .swagger-ui .opblock-tag span {
-        font-size: calc(1.275rem + 0.3vw) !important;
+.swagger-ui section.models h4 {
+    padding: 0;
+}
+
+    .swagger-ui section.models h4 button {
+        padding: .5rem 1rem;
+        margin: 0;
     }
+
+.swagger-ui section.models h4:hover,
+.swagger-ui section.models h4 button:hover {
+    background: none;
+}
+
+.navigation-card .card-header,
+.tools-card .card-header,
+.swagger-ui .opblock-tag span {
+    font-size: calc(1.275rem + 0.3vw) !important;
+}
 
 .tools-card-wrapper {
     display: flex;
     flex-direction: row-reverse;
+    /*z-index: -1;*/
 }
 
 .opblock-tag-section {
@@ -1292,4 +1312,98 @@ p {
 
 .shadow {
     box-shadow: var(--bs-box-shadow) !important;
+}
+
+.dark-mode-toggle {
+    display: none;
+}
+
+html,
+html .swagger-ui {
+    background-color: var(--bs-body-bg) !important;
+}
+
+.swagger-ui .scheme-container {
+    background-color: var(--bs-card-cap-bg) !important;
+}
+
+.swagger-ui .servers > label {
+    display: contents;
+}
+
+.opblock-tag-section,
+.swagger-ui section.models,
+.swagger-ui section.models .model-container {
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+    border-radius: var(--bs-border-radius) !important;
+    margin-bottom: 1rem !important;
+    box-shadow: var(--bs-box-shadow) !important;
+}
+
+.swagger-ui .json-schema-2020-12,
+.swagger-ui .json-schema-2020-12 button {
+    background: none !important;
+}
+
+.swagger-ui .models > div > .json-schema-2020-12 {
+    background: none !important;
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+    border-radius: var(--bs-border-radius) !important;
+    margin: 1rem !important;
+    box-shadow: var(--bs-box-shadow) !important;
+}
+
+.swagger-ui section.models h4 {
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+.swagger-ui select {
+    box-shadow: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .swagger-ui select {
+        transition: none !important;
+    }
+}
+
+.swagger-ui select:focus {
+    border-color: #86b7fe !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+}
+
+.swagger-ui .json-schema-2020-12-expand-deep-button {
+    color: var(--bs-secondary-color) !important;
+}
+
+.swagger-ui .wrapper .models {
+    position: relative;
+    z-index: 1;
+}
+
+.swagger-ui .json-schema-2020-12__title {
+    color: var(--bs-body-color) !important;
+}
+
+.swagger-ui .servers-title {
+    color: var(--bs-body-color) !important;
+}
+
+.swagger-ui .json-schema-2020-12-body {
+    border-color: var(--bs-body-color) !important;
+}
+
+.swagger-ui .json-schema-2020-12-keyword--patternProperties .json-schema-2020-12__title:after,
+.swagger-ui .json-schema-2020-12-keyword--patternProperties .json-schema-2020-12__title:before,
+.swagger-ui .json-schema-2020-12__attribute--primary {
+    color: var(--bs-json-attribute-color) !important;
+}
+
+.swagger-ui .json-schema-2020-12__constraint {
+    color: var(--bs-emphasis-color) !important;
+}
+
+.swagger-ui .json-schema-2020-12-head svg {
+    fill: var(--bs-body-color) !important;
 }
