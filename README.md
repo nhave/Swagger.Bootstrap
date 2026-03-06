@@ -16,6 +16,7 @@ It also adds a simple theme switcher so users can toggle between **Light**, **Da
 - Bootstrap-inspired styling for Swagger UI
 - Built-in theme switcher (light/dark)
 - Navigation & Tool menus (Experimental)
+- Authentication window, to authorize Swagger using JWT.
 - Easy integration with ASP.NET Core Swagger setup
 
 ## 📂 Getting Started
@@ -28,7 +29,43 @@ dotnet add package Swagger.Bootstrap
 ```bash
 Install-Package Swagger.Bootstrap
 ```
-## New setup
+## **Version 2.X *(NEW)***
+Version 2.X has returned to `UseSwaggerBootstrap` instead of `UseSwaggerUI`
+
+In your `Program.cs` or `Startup.cs`, add the following methods.
+```csharp
+builder.Services.AddSwaggerBootstrap();
+```
+Or
+```csharp
+// All variables are optional.
+builder.Services.AddSwaggerBootstrap(options =>
+{
+    // Enables the experimental features,
+    // including navigation & tools.
+    options.UseExperimentalFeatures = true;
+    // Enables the login page and button.
+    options.UseAuthentication = true;
+    // The endpoint to call during login.
+    options.loginOptions.LoginEndpoint = "/auth/login";
+    // The variable to use for authentication, when login succeeds.
+    options.loginOptions.VariableName = "jwtToken";
+    // Whether to configure the username field as text or email.
+    // The label will be changed as well.
+    options.loginOptions.UserNameType = UserNameType.Text;
+});
+```
+Then, replace the default `UseSwaggerUI` with:
+```csharp
+app.UseSwaggerBootstrap(c =>
+{
+    // OpenApi example, using swagger gen.
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+});
+```
+`UseStaticFiles` is no longer needed as the resources are dynamically mapped now.
+
+## **Version 1.x**
 In your `UseSwaggerUI` just add `AddSwaggerBootstrap`:
 ```csharp
 app.UseSwaggerUI(options =>
@@ -46,7 +83,7 @@ This setup needs `UseStaticFiles` to be enabled:
 app.UseStaticFiles();
 ```
 
-## Old setup
+## **PRE 1.0**
 
 ### Configure Swagger.Bootstrap
 In your `Program.cs` or `Startup.cs`, simply replace the default UseSwaggerUI with:
