@@ -12,7 +12,7 @@
     ██╔══██╗██║   ██║██║   ██║   ██║   ╚════██║   ██║   ██╔══██╗██╔══██║██╔═══╝ 
     ██████╔╝╚██████╔╝╚██████╔╝   ██║   ███████║   ██║   ██║  ██║██║  ██║██║     
     ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      
-======= Swagger.Bootstrap V1.1 by N-Tech ======================================= */
+======= Swagger.Bootstrap V2.0 by N-Tech ======================================= */
 
 @charset "UTF-8";
 
@@ -1353,7 +1353,7 @@ html .swagger-ui {
     box-shadow: var(--bs-box-shadow) !important;
 }
 
-.swagger-ui section.models h4 {
+.swagger-ui section.models.is-open h4 {
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
 

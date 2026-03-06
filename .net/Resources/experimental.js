@@ -12,7 +12,7 @@
     ██╔══██╗██║   ██║██║   ██║   ██║   ╚════██║   ██║   ██╔══██╗██╔══██║██╔═══╝ 
     ██████╔╝╚██████╔╝╚██████╔╝   ██║   ███████║   ██║   ██║  ██║██║  ██║██║     
     ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      
-======= Swagger.Bootstrap V1.1 by N-Tech ======================================= */
+======= Swagger.Bootstrap V2.0 by N-Tech ======================================= */
 
 (function () {
     let stickyNav = false;
@@ -144,6 +144,11 @@
             collapseAll();
         });
         navCardBody.append(collapseButton);
+
+        const event = new CustomEvent("toolsCardReady", {
+            detail: { navCardBody }
+        });
+        document.dispatchEvent(event);
     }
 
     document.addEventListener("DOMContentLoaded", async () => {
