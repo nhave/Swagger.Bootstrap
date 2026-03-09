@@ -136,14 +136,14 @@ namespace Swagger.Bootstrap
                 var content = ResourceLoader.Load($"Resources/main.css");
 
                 return Results.Text(content, "text/css; charset=utf-8");
-            });
+            }).ExcludeFromDescription();
 
             app.MapGet("/swaggerbootstrap/main.js", () =>
             {
                 var content = ResourceLoader.Load($"Resources/main.js");
 
                 return Results.Text(content, "application/javascript; charset=utf-8");
-            });
+            }).ExcludeFromDescription();
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Swagger.Bootstrap
                 var content = ResourceLoader.Load($"Resources/experimental.js");
 
                 return Results.Text(content, "application/javascript; charset=utf-8");
-            });
+            }).ExcludeFromDescription();
         }
 
         /// <summary>
@@ -192,14 +192,14 @@ namespace Swagger.Bootstrap
                 content = TemplateEngine.Apply(content, values);
 
                 return Results.Text(content, "text/html; charset=utf-8");
-            }); 
+            }).ExcludeFromDescription(); 
             
             app.MapGet("/swaggerbootstrap/authentication.js", () =>
             {
                 var content = ResourceLoader.Load($"Resources/authentication.js");
 
                 return Results.Text(content, "application/javascript; charset=utf-8");
-            });
+            }).ExcludeFromDescription();
         }
     }
 }
