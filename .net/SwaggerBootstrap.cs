@@ -51,9 +51,9 @@ namespace Swagger.Bootstrap
         /// <returns>
         /// The original <see cref="IApplicationBuilder"/> instance, enabling method chaining.
         /// </returns>
-        public static IApplicationBuilder UseSwaggerBootstrap(this IApplicationBuilder app, Action<SwaggerUIOptions> setupAction = null!)
+        public static WebApplication UseSwaggerBootstrap(this WebApplication app, Action<SwaggerUIOptions> setupAction = null!)
         {
-            var options = app.ApplicationServices.GetRequiredService<SwaggerBootstrapOptions>();
+            var options = app.Services.GetRequiredService<SwaggerBootstrapOptions>();
             var routeBuilder = (IEndpointRouteBuilder) app;
 
             if (options.UseAuthentication)
